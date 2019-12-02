@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;    
+  }
+  .li{
+    list-style: none;
+  }
+  .header{
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+  }
+  .header input{
+    border: 1px solid;
+    border-radius: 5px;
+    position: absolute;
+    right: 10px;
+    padding: 3px;
+    top: 17px;
+  }
+  .header select{
+    padding: 5px;
+    width: 80px;
+    position: absolute;
+    left: 125px;
+    top: 17px;
+  }
+  .worker{
+    width: 105px;
+    position: absolute;
+    font-size: 12px;
+    top: 22px;
+    left: 10px;
+  }
+  .list li{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: #409eff;
+    color: white;
+    padding: 10px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .odd li{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: steelblue;
+    color: white;
+    padding: 10px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+  }
+  .even li{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: steelblue;
+    color: white;
+    padding: 10px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+  }
+  .color_odd li{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: cornflowerblue;
+    color: white;
+    padding: 10px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+  }
+  .color_even li{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: cornflowerblue;
+    color: white;
+    padding: 10px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+  }
+  .grade_odd li{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: limegreen;
+    color: white;
+    padding: 10px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+  }
+  .grade_even li{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: limegreen;
+    color: white;
+    padding: 10px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+  }
+  .footer{
+    position: absolute;
+  }
+  .btn{
+    width: 130px;
+    padding: 5px;
+    border: 1px solid #67C23A;
+    background: #67C23A;
+    color: white;
+    border-radius: 7px;
+  }
+  .worker_btn{
+    background: #409eff;
+    border: 1px solid #409eff;
+    border-radius: 5px;
+    width: 90px;
+    height: 60px;
+    font-size: 17px;
+    color: white;
+    float: left;
+    margin-right: 10px;
+  }
+  .question_list li{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: #67C23A;
+    color: white;
+    padding: 5px;
+    height: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 11px;
+    width: max-content;
+  }
+  .group_list li{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: cornflowerblue;
+    color: white;
+    padding: 5px;
+    height: 35px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 11px;
+    width: max-content;
+    margin-bottom: 5px;
+  } 
+  .back{
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 60px;
+    color: white;
+    border-radius: 7px;
+  }           
+  .active{
+    background: red !important;
+  }
+  .dash{
+    border-bottom: 1px dashed #406eff;
+    height: 70px;
+    padding: 10px;
+  }
+  .dash2{
+    height: 70px;
+    padding: 10px;
+  }  
+</style>
+<body style="overflow:scroll;width: 380px;">
+  <div class="header">
+    <div class="worker" style="display: none;">当前员工：<p class="work" style="float: right;color: #406eff;"></p></div>
+    <select name="" id="">
+      <option value="">大件</option>
+      <option value="">小件</option>
+    </select>
+    <input type="date">      
+    </div>  
+  <div class="step1">
+    <div style="overflow: scroll;">
+    <ul class="list"  style="width: max-content;display: flex;margin-bottom: 30px;">
+      <li>
+        <div>1</div>
+        <div>窦闯</div>
+      </li>
+      <li>
+        <div>2</div>
+        <div>郭卫兵</div>
+      </li>
+      <li>
+        <div>3</div>
+        <div>刘仁军</div>
+      </li>
+      <li>
+        <div>4</div>
+        <div>姜贻良</div>
+      </li>
+      <li>
+        <div>5</div>
+        <div>姜方信</div>
+      </li>
+      <li>
+        <div>6</div>
+        <div>肖忆章</div>
+      </li>
+      <li>
+        <div>7</div>
+        <div>雷涛</div>
+      </li>
+      <li>
+        <div>14</div>
+        <div>窦红亮</div>
+      </li>
+      <li>
+        <div>18</div>
+        <div>刘山</div>
+      </li>
+      <li>
+        <div>21</div>
+        <div>马元金</div>
+      </li>
+      <li>
+        <div>23</div>
+        <div>姚明坤</div>
+      </li>
+      <li>
+        <div>26</div>
+        <div>才代浓</div>
+      </li>
+      <li>
+        <div>27</div>
+        <div>袁学强</div>
+      </li>
+      <li>
+        <div>38</div>
+        <div>肖海生</div>
+      </li>
+      <li>
+        <div>38</div>
+        <div>韦耀川</div>
+      </li>       
+    </ul>
+    </div>
+    <div style="overflow: scroll;">
+    <ul class="odd" style="display: none;margin-bottom: 30px;">
+      <li>2345</li>
+      <li>dasf</li>
+      <li>234677</li>
+      <li>324-324</li>
+      <li>211-233</li>
+    </ul>
+    </div>
+    <div style="overflow: scroll;">
+    <ul class="even" style="display: none;margin-bottom: 30px;">
+        <li>2345-1000</li>
+        <li>213-s4</li>
+        <li>23904</li>
+    </ul>
+    </div>
+    <div style="overflow: scroll;">
+    <ul class="color_odd" style="display: none;margin-bottom: 30px;">
+        <li>哑黑</li>
+        <li>深蓝</li>
+        <li>幽蓝</li>
+        <li>淡紫</li>
+        <li>草青</li>
+    </ul>
+    </div>
+    <div style="overflow: scroll;">
+      <ul class="color_even" style="display: none;margin-bottom: 30px;">
+          <li>白色</li>
+          <li>黑色</li>
+          <li>紫色</li>
+          <li>红色</li>
+    </ul>
+    </div>
+    <div style="overflow: scroll;">
+    <ul class="grade_odd" style="display: none;margin-bottom: 30px;">
+        <li>优等</li>
+        <li>合格</li>
+        <li>机补</li>
+        <li>废品</li>
+    </ul>
+    </div>
+    <div style="overflow: scroll;">
+    <ul class="grade_even" style="display: none;margin-bottom: 30px;">
+        <li>优等</li>
+        <li>合格</li>
+        <li>机补</li>
+        <li>废品</li>
+    </ul>
+    </div>               
+  </div>
+  <div class="step2" style="display: none;">
+    <div class="content">
+      <div class="dash">
+        <div><button class="worker_btn">成型工</button></div>
+        <div style="overflow: scroll;">
+        <ul class="question_list" style="display: inline-flex;">
+          <li>大裂1个</li>
+          <li>小裂5个</li>
+          <li>裂报废1个</li>
+          <li>内裂1个</li>
+          <li>脚裂1个</li>
+          <li>变形-致报废1个</li>
+          <li>不平-致报废1个</li>
+          <li>针孔杂质1个</li>
+          <li>后裂1个</li>
+          <li>无脱落</li>
+          <li>大裂</li>
+          <li>炸坯</li>
+        </ul></div>
+      </div>
+      <div class="dash">
+          <div><button class="worker_btn">修坯工</button></div>
+          <div style="overflow: scroll;">
+          <ul class="group_list" style="display: inline-flex;">
+            <li>
+              <div>101</div>
+              <div>修坯1组</div>
+            </li>
+            <li>
+              <div>102</div>
+              <div>修坯2组</div>
+            </li>
+            <li>
+              <div>103</div>
+              <div>修坯3组</div>
+            </li>
+            <li>
+              <div>104</div>
+              <div>修坯4组</div>
+            </li>
+            <li>
+              <div>101</div>
+              <div>修坯1组</div>
+            </li>
+            <li>
+              <div>102</div>
+              <div>修坯2组</div>
+            </li>
+            <li>
+              <div>103</div>
+              <div>修坯3组</div>
+            </li>
+            <li>
+              <div>104</div>
+              <div>修坯4组</div>
+            </li>            
+          </ul>          
+          </div>
+          <div style="overflow: scroll;">
+          <ul class="question_list" style="display: inline-flex;">
+            <li>查油</li>
+            <li>毛刺</li>
+            <li>修不平</li>
+            <li>土渣</li>
+            <li>土粉</li>
+            <li>上水不到位</li>
+          </ul></div>
+      </div>
+      <div class="dash">
+          <div><button class="worker_btn">施釉工</button></div>
+          <div style="overflow: scroll;">
+              <ul class="group_list" style="display: inline-flex;">
+                <li>
+                  <div>101</div>
+                  <div>施釉1组</div>
+                </li>
+                <li>
+                  <div>102</div>
+                  <div>施釉2组</div>
+                </li>
+                <li>
+                  <div>103</div>
+                  <div>施釉3组</div>
+                </li>          
+              </ul>          
+          </div>          
+          <div style="overflow: scroll;">
+          <ul class="question_list" style="display: inline-flex;">
+            <li>薄釉</li>
+            <li>刮脚</li>
+            <li>喷粘板</li>
+            <li>掉釉</li>
+            <li>缩釉</li>
+            <li>粘盖</li>
+            <li>喷碰伤</li>
+            <li>漂釉</li>
+            <li>堵孔</li>
+            <li>釉渣</li>
+          </ul></div>
+      </div>
+      <div class="dash">
+          <div><button class="worker_btn">登窑工</button></div>
+          <div style="overflow: scroll;">
+            <ul class="group_list" style="display: inline-flex;">
+              <li>
+                <div>1331</div>
+                <div>登窑</div>
+              </li>              
+            </ul>          
+          </div>           
+          <div style="overflow: scroll;">
+          <ul class="question_list" style="display: inline-flex;">
+            <li>登粘板</li>
+            <li>登掉釉</li>
+            <li>登碰伤</li>
+            <li>铝粉</li>
+            <li>落渣</li>
+            <li>粘渣</li>
+            <li>粘堵</li>
+            <li>刮花</li>
+            <li>落错堵</li>
+          </ul></div>
+      </div>
+      <div class="dash">
+          <div><button class="worker_btn">烧窑工</button></div>              
+          <div style="overflow: scroll;">
+          <ul class="question_list" style="display: inline-flex;">
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+          </ul></div>
+      </div>
+      <div class="dash2">
+          <div><button class="worker_btn">其他人员</button></div>
+          <div style="overflow: scroll;">
+              <ul class="group_list" style="display: inline-flex;">
+                <li>
+                  <div>3333</div>
+                  <div>打标</div>
+                </li>
+                <li>
+                  <div>1213</div>
+                  <div>原料承包人</div>
+                </li>       
+              </ul>          
+          </div>     
+          <div style="overflow: scroll;">
+          <ul class="question_list" style="display: inline-flex;">
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+            <li>火裂一个</li>
+          </ul></div>
+      </div>                                                            
+    </div>
+      <div class="footer">
+      <button class="btn">保存并添加该工人</button>
+      <button class="btn">保存添加其他人</button>
+      <button class="back" onclick="back()">返回</button></div>
+  </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $("li").click(function(e){
+      $(this).addClass("active")
+      $(this).siblings().removeClass("active")
+    }); 
+    $(".list li:odd").click(function () {
+      $(".odd").css('display','flex')
+      $(".even").css('display','none')      
+    }) 
+    $(".list li:even").click(function () {
+      $(".even").css('display','flex')
+      $(".odd").css('display','none')      
+    }) 
+    $(".odd li:odd").click(function () {
+      $(".color_odd").css('display','flex')
+      $(".color_even").css('display','none')      
+    })
+    $(".odd li:even").click(function () {
+      $(".color_odd").css('display','none')
+      $(".color_even").css('display','flex')      
+    })
+    $(".even li:odd").click(function () {
+      $(".color_even").css('display','none')
+      $(".color_odd").css('display','flex')      
+    })           
+    $(".even li:even").click(function () {
+      $(".color_even").css('display','flex')
+      $(".color_odd").css('display','none')      
+    })
+    $(".color_even li:even").click(function () {
+      $(".grade_even").css('display','flex')
+      $(".grade_odd").css('display','none')             
+    })
+    $(".color_even li:odd").click(function () {
+      $(".grade_even").css('display','none')     
+      $(".grade_odd").css('display','flex')      
+    })
+    $('.grade_odd li').click(function () {
+      $(".step2").show()
+      $(".step1").hide()
+      $(".worker").show()
+      var h = $(".list .active").html()
+      var val = $(h).text()
+      var reg = /[u4E00-u9FA5]/g
+      var res = val.replace(reg,'') 
+      $(".work").text(res)      
+    })
+    $('.grade_even li').click(function () {
+      $(".step2").show()
+      $(".step1").hide()
+      $(".worker").show()
+      var h = $(".list .active").html()
+      var val = $(h).text()
+      var reg = /[u4E00-u9FA5]/g
+      var res = val.replace(reg,'') 
+      $(".work").text(res)           
+    })
+    function back(){
+      $(".step2").hide()
+      $(".step1").show()
+      $(".worker").hide()      
+    }                                   
+</script>
+</html>
